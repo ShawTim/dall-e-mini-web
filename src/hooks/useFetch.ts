@@ -31,7 +31,11 @@ const fetchWithRetry = async (
     return images.map(parseImage);
   } catch (e) {
     if (retry >= 0) {
-      return await fetchWithRetry(words, retry - 1);
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          fetchWithRetry(words, retry - 1).then(resolve);
+        }, 1000);
+      });
     } else {
       return [];
     }

@@ -9,12 +9,21 @@ import {
   Col,
   Spinner,
   Alert,
+  ListGroup,
 } from 'react-bootstrap';
 import useFetch from './hooks/useFetch';
 
 import './App.css';
 
-const LOOP = new Array(3).fill(0);
+const LOOP = new Array(9).fill(0);
+
+const GithubIcon = () => (
+  <Image
+    src='https://github.githubassets.com/favicons/favicon.svg'
+    width={20}
+    height={20}
+  />
+);
 
 function App() {
   const [hasFetched, setHasFetched] = useState<boolean>(false);
@@ -38,14 +47,15 @@ function App() {
     <Container fluid='sm' className='App'>
       {!loading && hasFetched && !images.length && (
         <Row>
-          <Col>
+          <Col xs='auto'>
             <Alert variant='danger'>
               Too many traffic, please try again later.
             </Alert>
           </Col>
+          <Col xs={12}></Col>
         </Row>
       )}
-      <Row class='mb-3'>
+      <Row className='mb-3'>
         <InputGroup>
           <FormControl
             value={words}
@@ -58,15 +68,36 @@ function App() {
           </Button>
         </InputGroup>
       </Row>
-      {LOOP.map((_, i) => (
-        <Row>
-          <Col>
-            <Image src={images[i * 3]} thumbnail={!!images[i * 3]} />
-            <Image src={images[i * 3 + 1]} thumbnail={!!images[i * 3 + 1]} />
-            <Image src={images[i * 3 + 2]} thumbnail={!!images[i * 3 + 2]} />
-          </Col>
-        </Row>
-      ))}
+      <Row className='justify-content-md-center'>
+        <Col lg={9} xs={12}>
+          {LOOP.map((_, i) => (
+            <Image src={images[i]} thumbnail={!!images[i]} />
+          ))}
+        </Col>
+      </Row>
+      <Row className='mt-4'>
+        <Col>
+          <ListGroup horizontal className='justify-content-md-center'>
+            <ListGroup.Item>
+              <a
+                className='text-decoration-none'
+                href='https://github.com/shawtim/dall-e-mini-web'
+              >
+                <GithubIcon /> source
+              </a>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Credit:&nbsp;
+              <a
+                className='text-decoration-none'
+                href='https://github.com/borisdayma/dalle-mini'
+              >
+                <GithubIcon /> DALL·E Mini
+              </a>
+            </ListGroup.Item>
+          </ListGroup>
+        </Col>
+      </Row>
     </Container>
   );
 }
