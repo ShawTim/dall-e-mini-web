@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dall-e-mini-web/static/css/main.bacf237d.css",
-    "main.js": "/dall-e-mini-web/static/js/main.c7a34838.js",
+    "main.js": "/dall-e-mini-web/static/js/main.68547b17.js",
     "static/js/787.cb208177.chunk.js": "/dall-e-mini-web/static/js/787.cb208177.chunk.js",
     "index.html": "/dall-e-mini-web/index.html",
     "main.bacf237d.css.map": "/dall-e-mini-web/static/css/main.bacf237d.css.map",
-    "main.c7a34838.js.map": "/dall-e-mini-web/static/js/main.c7a34838.js.map",
+    "main.68547b17.js.map": "/dall-e-mini-web/static/js/main.68547b17.js.map",
     "787.cb208177.chunk.js.map": "/dall-e-mini-web/static/js/787.cb208177.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bacf237d.css",
-    "static/js/main.c7a34838.js"
+    "static/js/main.68547b17.js"
   ]
 }

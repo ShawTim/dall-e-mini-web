@@ -82,6 +82,7 @@ function App() {
               <a
                 className='text-decoration-none'
                 href='https://github.com/shawtim/dall-e-mini-web'
+                target='_blank'
               >
                 <GithubIcon /> source
               </a>
@@ -91,6 +92,7 @@ function App() {
               <a
                 className='text-decoration-none'
                 href='https://github.com/borisdayma/dalle-mini'
+                target='_blank'
               >
                 <GithubIcon /> DALL·E Mini
               </a>
